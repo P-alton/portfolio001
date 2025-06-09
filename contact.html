@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Pranjal Yadav</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <!-- Remixicon for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #38bdf8;
+      --accent: #14b8a6;
+      --pink: #f472b6;
+      --dark: #0f172a;
+      --glass-bg: linear-gradient(135deg, rgba(30,41,59,0.88) 0%, rgba(20,184,166,0.55) 100%);
+      --glass-border: rgba(56,189,248,0.25);
+      --glass-shadow: 0 8px 40px 0 rgba(20,184,166,0.18);
+      --text-light: #e0f2fe;
+      --text-accent: #38bdf8;
+      --text-pink: #f472b6;
+    }
+    html, body {
+      min-height: 100%;
+      background: radial-gradient(ellipse at 60% 10%, #38bdf822 0%, #0f172a 80%);
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-light);
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      overflow-x: hidden;
+    }
+    #bg-3d {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      z-index: -20;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.45;
+      filter: blur(12px);
+      animation: float3d 14s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    .orb1 {
+      width: 480px; height: 480px;
+      background: radial-gradient(circle at 30% 30%, var(--primary) 0%, #0ea5e9 80%);
+      left: 5vw; top: 8vh;
+      animation-delay: 0s;
+    }
+    .orb2 {
+      width: 340px; height: 340px;
+      background: radial-gradient(circle at 70% 70%, var(--accent) 0%, #0f766e 80%);
+      right: 8vw; top: 50vh;
+      animation-delay: 2s;
+    }
+    .orb3 {
+      width: 260px; height: 260px;
+      background: radial-gradient(circle at 50% 50%, var(--pink) 0%, #a21caf 90%);
+      left: 40vw; bottom: 0;
+      animation-delay: 4s;
+    }
+    @keyframes float3d {
+      0% { transform: translateY(0) scale(1) rotate(0deg);}
+      30% { transform: translateY(-30px) scale(1.08) rotate(8deg);}
+      60% { transform: translateY(40px) scale(0.96) rotate(-6deg);}
+      100% { transform: translateY(-20px) scale(1.04) rotate(4deg);}
+    }
+    .glass {
+      position: relative;
+      z-index: 1;
+      background: var(--glass-bg);
+      border: 1.5px solid var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      backdrop-filter: blur(15px) saturate(140%);
+      -webkit-backdrop-filter: blur(15px) saturate(140%);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: 
+        transform 0.35s cubic-bezier(.22,1,.36,1),
+        box-shadow 0.35s cubic-bezier(.22,1,.36,1),
+        border-color 0.25s;
+    }
+    .glass:hover {
+      transform: scale(1.03);
+      box-shadow:
+        0 12px 36px 0 var(--primary),
+        0 0 32px 8px var(--accent),
+        0 1.5px 8px 0 #fff2 inset;
+      border-color: var(--accent);
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeInUp 1s forwards;
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .glow-btn {
+      background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+      color: var(--text-light);
+      box-shadow: 0 0 32px 0 #38bdf8aa, 0 2px 16px 0 #14b8a6aa;
+      border: none;
+      letter-spacing: 0.08em;
+      font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+      text-shadow: 0 1px 8px var(--accent);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .glow-btn:hover {
+      background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 100%);
+      transform: scale(1.04);
+    }
+    .social-anim {
+      transition: color 0.3s, transform 0.3s, filter 0.3s;
+      filter: drop-shadow(0 0 0 var(--primary));
+    }
+    .social-anim:hover {
+      color: var(--primary) !important;
+      transform: scale(1.18) rotate(-8deg);
+      filter: drop-shadow(0 0 8px var(--primary));
+    }
+    @media (max-width: 600px) {
+      .glass {
+        min-width: 90vw;
+        max-width: 98vw;
+        min-height: 280px;
+        padding: 1.2rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 3D Dynamic Background -->
+  <div id="bg-3d">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative">
+    <div class="glass max-w-lg w-full p-8 fade-in">
+      <h2 class="text-3xl font-bold mb-4" style="color:var(--primary);">Contact Me</h2>
+      <p class="mb-6" style="color:var(--text-light);">
+        Have a project in mind, want to collaborate, or just want to say hello?<br>
+        Fill out the form below or <a href="mailto:yapranjal31@gmail.com" style="color:var(--primary);text-decoration:underline;">email me directly</a>.
+      </p>
+      <form id="contactForm" autocomplete="off" class="space-y-6">
+        <div>
+          <label for="name" class="block text-left mb-2 text-blue-100 font-semibold">Name</label>
+          <input type="text" id="name" name="name" required
+            class="w-full border border-blue-200 p-3 rounded-lg bg-transparent text-blue-100 focus:outline-none focus:ring-2 focus:ring-accent transition"/>
+        </div>
+        <div>
+          <label for="email" class="block text-left mb-2 text-blue-100 font-semibold">Email</label>
+          <input type="email" id="email" name="email" required
+            class="w-full border border-blue-200 p-3 rounded-lg bg-transparent text-blue-100 focus:outline-none focus:ring-2 focus:ring-accent transition"/>
+        </div>
+        <div>
+          <label for="message" class="block text-left mb-2 text-blue-100 font-semibold">Message</label>
+          <textarea id="message" name="message" rows="4" required
+            class="w-full border border-blue-200 p-3 rounded-lg bg-transparent text-blue-100 focus:outline-none focus:ring-2 focus:ring-accent transition"></textarea>
+        </div>
+        <button type="submit"
+          class="glow-btn inline-block px-8 py-3 rounded-lg font-semibold shadow transition text-lg tracking-wide">
+          Send Message
+        </button>
+        <div id="contactSuccess" class="text-primary text-center mt-4 text-base"></div>
+      </form>
+      <div class="mt-8 flex flex-col gap-2 text-blue-100 text-base">
+        <div class="flex items-center gap-2 justify-center">
+          <i class="ri-phone-line text-accent text-xl"></i>
+          <span>+91-8127314770</span>
+        </div>
+        <div class="flex items-center gap-2 justify-center">
+          <i class="ri-mail-line text-accent text-xl"></i>
+          <span>yapranjal31@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-2 justify-center">
+          <i class="ri-map-pin-line text-accent text-xl"></i>
+          <span>Kanpur, Uttar Pradesh, India</span>
+        </div>
+        <div class="flex items-center gap-2 justify-center">
+          <i class="ri-user-3-line text-accent text-xl"></i>
+          <span>B.Tech @ PSIT Kanpur</span>
+        </div>
+      </div>
+      <div class="mt-8 flex justify-center gap-6">
+        <a href="https://www.instagram.com/mrforever_2?igsh=MWVjaWd4b28wZTd4ZQ==" target="_blank" rel="noopener" aria-label="Instagram" class="social-anim text-pink-500 text-2xl"><i class="ri-instagram-line"></i></a>
+        <a href="https://github.com/P-alton" target="_blank" rel="noopener" aria-label="GitHub" class="social-anim text-gray-100 text-2xl"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/pranjal-yadav-3588a0331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-anim text-blue-400 text-2xl"><i class="ri-linkedin-fill"></i></a>
+      </div>
+      <a href="main.html" class="block mt-8 text-accent underline text-base font-medium">← Back to Portfolio</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="w-full flex justify-center py-8 bg-transparent">
+    <div class="flex gap-8">
+      <a href="https://github.com/P-alton" target="_blank" rel="noopener" aria-label="GitHub: P-alton" class="social-anim text-white text-2xl"><i class="ri-github-fill"></i></a>
+      <a href="https://linkedin.com/in/mr-forever22312006" target="_blank" rel="noopener" aria-label="LinkedIn: mr-forever22312006" class="social-anim text-white text-2xl"><i class="ri-linkedin-fill"></i></a>
+      <a href="mailto:yapranjal31@gmail.com" aria-label="Email: yapranjal31@gmail.com" class="social-anim text-white text-2xl"><i class="ri-mail-fill"></i></a>
+    </div>
+  </footer>
+  <script>
+    // Simple fake form handler (no backend, just UI feedback)
+    document.getElementById('contactForm').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('contactSuccess').textContent = "Thank you! Your message has been sent.";
+      this.reset();
+    };
+    // Fade-in animation for section titles
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll('.fade-in').forEach((el, i) => {
+        el.style.animationDelay = (i * 0.15) + "s";
+      });
+    });
+  </script>
+</body>
+</html>

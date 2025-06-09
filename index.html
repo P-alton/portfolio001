@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Welcome | Pranjal Yadav - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+    <style>
+      body {
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        background: radial-gradient(ellipse at 60% 10%, #38bdf822 0%, #0f172a 80%);
+        color: #e0f2fe;
+        overflow: hidden;
+      }
+      .welcome-bg-orb {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.45;
+        filter: blur(32px);
+        z-index: 0;
+        animation: orbFloat 16s ease-in-out infinite alternate;
+      }
+      .welcome-orb1 {
+        width: 420px; height: 420px;
+        background: radial-gradient(circle at 30% 30%, #38bdf8 0%, #0ea5e9 80%);
+        left: 5vw; top: 8vh;
+        animation-delay: 0s;
+      }
+      .welcome-orb2 {
+        width: 320px; height: 320px;
+        background: radial-gradient(circle at 70% 70%, #14b8a6 0%, #0f766e 80%);
+        right: 8vw; top: 50vh;
+        animation-delay: 2s;
+      }
+      .welcome-orb3 {
+        width: 220px; height: 220px;
+        background: radial-gradient(circle at 50% 50%, #f472b6 0%, #a21caf 90%);
+        left: 40vw; bottom: 0;
+        animation-delay: 4s;
+      }
+      @keyframes orbFloat {
+        0% { transform: translateY(0) scale(1) rotate(0deg);}
+        30% { transform: translateY(-30px) scale(1.08) rotate(8deg);}
+        60% { transform: translateY(40px) scale(0.96) rotate(-6deg);}
+        100% { transform: translateY(-20px) scale(1.04) rotate(4deg);}
+      }
+      .welcome-glass {
+        position: relative;
+        z-index: 2;
+        background: linear-gradient(135deg, rgba(30,41,59,0.88) 0%, rgba(20,184,166,0.55) 100%);
+        border: 1.5px solid rgba(56,189,248,0.25);
+        box-shadow: 0 8px 40px 0 rgba(20,184,166,0.18);
+        backdrop-filter: blur(15px) saturate(140%);
+        -webkit-backdrop-filter: blur(15px) saturate(140%);
+        border-radius: 2rem;
+        padding: 3rem 2.5rem;
+        max-width: 420px;
+        width: 94vw;
+        margin: 0 auto;
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        animation: fadeInUp 1.2s cubic-bezier(.22,1,.36,1) both;
+      }
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(48px);}
+        100% { opacity: 1; transform: translateY(0);}
+      }
+      .welcome-glass h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.2rem;
+        background: linear-gradient(90deg, #38bdf8 10%, #14b8a6 90%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.04em;
+        text-shadow: 0 2px 24px #14b8a6cc;
+      }
+      .welcome-glass p {
+        font-size: 1.18rem;
+        color: #e0f2fe;
+        margin-bottom: 2.2rem;
+        line-height: 1.6;
+        text-shadow: 0 1px 8px #0ea5e9;
+      }
+      .welcome-btn {
+        background: linear-gradient(90deg, #38bdf8 0%, #14b8a6 100%);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 0.9rem 2.8rem;
+        border-radius: 999px;
+        border: none;
+        box-shadow: 0 0 24px 0 #38bdf8aa, 0 2px 12px 0 #14b8a6aa;
+        cursor: pointer;
+        letter-spacing: 0.08em;
+        margin-top: 0.5rem;
+        transition: background 0.2s, transform 0.2s;
+        outline: none;
+      }
+      .welcome-btn:hover {
+        background: linear-gradient(90deg, #14b8a6 0%, #38bdf8 100%);
+        transform: scale(1.04);
+      }
+      .welcome-profile {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        border: 3px solid #38bdf8;
+        box-shadow: 0 0 32px 8px #38bdf8, 0 2px 24px 0 #14b8a6;
+        animation: profilePop 2.2s cubic-bezier(.22,1,.36,1) 0.2s both;
+      }
+      @keyframes profilePop {
+        0% { opacity: 0; transform: scale(0.7) translateY(60px);}
+        60% { opacity: 1; transform: scale(1.08) translateY(-10px);}
+        100% { opacity: 1; transform: scale(1) translateY(0);}
+      }
+      @media (max-width: 600px) {
+        .welcome-glass {
+          padding: 1.2rem 0.7rem;
+          margin-top: 3vh;
+        }
+        .welcome-glass h1 {
+          font-size: 2rem;
+        }
+        .welcome-profile {
+          width: 72px;
+          height: 72px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Animated 3D Orbs Background -->
+    <div class="welcome-bg-orb welcome-orb1"></div>
+    <div class="welcome-bg-orb welcome-orb2"></div>
+    <div class="welcome-bg-orb welcome-orb3"></div>
+
+    <!-- Welcome Glass Card -->
+    <div class="welcome-glass">
+      <img src="https://static.readdy.ai/image/7825b75c4f4fba00f775fe73c0ba105e/b37ecde5f280c35210915e94685bac42.png" alt="Pranjal Yadav" class="welcome-profile" />
+      <h1>Welcome!</h1>
+      <p>
+        Explore the creative world of <span style="color:#38bdf8;font-weight:600;">Pranjal Yadav</span>.<br>
+        Dive into modern web development, UI/UX, and digital innovation.<br>
+        <span style="color:#14b8a6;">Ready to be inspired?</span>
+      </p>
+      <button class="welcome-btn" onclick="openPortfolio()">Enter Portfolio</button>
+    </div>
+
+    <script>
+      function openPortfolio() {
+        // Fade out welcome, then show main site (replace location or reveal content)
+        document.body.style.transition = "background 0.8s";
+        document.querySelector('.welcome-glass').style.opacity = 0;
+        setTimeout(function() {
+          window.location.href = "main.html"; // Change to your main portfolio file if needed
+        }, 500);
+      }
+    </script>
+  </body>
+</html>
