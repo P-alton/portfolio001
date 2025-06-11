@@ -25,13 +25,31 @@
       }
       html, body {
         min-height: 100%;
-        background: radial-gradient(ellipse at 60% 10%, #38bdf822 0%, #0f172a 80%);
+        background: transparent;
         font-family: 'Poppins', sans-serif;
         color: var(--text-light);
         scroll-behavior: smooth;
       }
       body {
         overflow-x: hidden;
+        position: relative;
+      }
+      /* Video Background */
+      .video-bg {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw; height: 100vh;
+        object-fit: cover;
+        z-index: -100;
+        pointer-events: none;
+        filter: brightness(0.7) blur(2.5px) saturate(1.15) contrast(1.08);
+        transition: filter 1.2s cubic-bezier(.22,1,.36,1), opacity 1.2s cubic-bezier(.22,1,.36,1);
+        opacity: 0.98;
+        will-change: filter, opacity;
+        background: #181c24;
+      }
+      .video-bg::-webkit-media-controls {
+        display: none !important;
       }
       /* 3D Dynamic Background */
       #bg-3d {
@@ -78,11 +96,13 @@
       .glass {
         position: relative;
         z-index: 1;
-        background: var(--glass-bg);
+        min-width: 320px;
+        background: linear-gradient(135deg, rgba(30,41,59,0.60) 0%, rgba(20,184,166,0.28) 100%);
+        /* ↑ More transparent glass effect */
         border: 1.5px solid var(--glass-border);
         box-shadow: var(--glass-shadow);
-        backdrop-filter: blur(15px) saturate(140%);
-        -webkit-backdrop-filter: blur(15px) saturate(140%);
+        backdrop-filter: blur(18px) saturate(160%);
+        -webkit-backdrop-filter: blur(18px) saturate(160%);
         border-radius: 1.5rem;
         overflow: hidden;
         transition: 
@@ -196,7 +216,6 @@
         background: var(--primary);
         color: #fff;
       }
-      /* Responsive tweaks */
       @media (max-width: 600px) {
         .glass {
           min-width: 90vw;
@@ -205,7 +224,6 @@
           padding: 1.2rem 0.7rem;
         }
       }
-      /* Section fade-in */
       .fade-in {
         opacity: 0;
         transform: translateY(24px);
@@ -220,12 +238,14 @@
     </style>
   </head>
   <body>
-    <!-- 3D Dynamic Background -->
-    <div id="bg-3d">
-      <div class="orb orb1"></div>
-      <div class="orb orb2"></div>
-      <div class="orb orb3"></div>
-    </div>
+    <!-- Gradient Drift Background (optional, for extra smoothness and depth) -->
+    <div class="gradient-drift-bg"></div>
+
+    <!-- Dynamic Video Background -->
+    <video class="video-bg" autoplay loop muted playsinline>
+      <source src="https://files.catbox.moe/skepyr.mp4" type="video/mp4">
+      <!-- Example car racing scene: Replace with your own car racing video if desired -->
+    </video>
 
     <!-- Hero Section -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4 relative">
@@ -288,7 +308,7 @@
               <div class="card-3d-orb card-3d-orb2"></div>
               <div class="card-3d-orb card-3d-orb3"></div>
             </div>
-            <img src="https://www.dropbox.com/scl/fi/ncfdo1fxcq5yys5ha7bm0/WhatsApp-Image-2025-06-08-at-21.33.23_0382384e.jpg?rlkey=33pvkib1snhmvcfkzatsxxqhd&st=yq2vo3f2&raw=1"
+            <img src="https://i.postimg.cc/fbjszv5B/ai-certification.jpg"
               alt="AI Masterclass Certificate"
               class="mb-4 rounded shadow-lg w-full h-52 object-contain bg-white transition-transform duration-300 hover:scale-105" />
             <h3 class="text-lg font-semibold mb-1 text-center" style="color:var(--text-light);font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;">AI Masterclass: How AI Thinks</h3>
@@ -304,7 +324,7 @@
               <div class="card-3d-orb card-3d-orb2"></div>
               <div class="card-3d-orb card-3d-orb3"></div>
             </div>
-            <img src="https://www.dropbox.com/scl/fi/gnb5r8bbdw1ye1qas671o/WhatsApp-Image-2025-06-08-at-21.33.23_f4ed2016.jpg?rlkey=kpgsgsbw85il7yjerqxt1z4n1&st=hr58bkhb&raw=1"
+            <img src="https://i.postimg.cc/RFRSg3G0/gfg-java.jpg"
               alt="Java Course Completion"
               class="mb-4 rounded shadow-lg w-full h-52 object-contain bg-white transition-transform duration-300 hover:scale-105" />
             <h3 class="text-lg font-semibold mb-1 text-center" style="color:var(--text-light);font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;">Java Course Completion</h3>
